@@ -5,7 +5,9 @@ const app = express();
 const PORT = 3000;
 import { router as personsRoute } from "./routes/personsRoute";
 import { router as infoRoute } from "./routes/infoRoute";
+import cors from "cors";
 
+app.use(cors());
 app.use(express.json());
 morgan.token("body", function (req: Request, _res) {
   return JSON.stringify(req.body);
